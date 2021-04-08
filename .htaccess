@@ -1,4 +1,8 @@
+# 打開重寫引擎
 RewriteEngine On
+# 重新比對網址，倘若請求網址不是檔案。
 RewriteCond %{REQUEST_FILENAME} !-f
+# 重新比對網址，倘若請求網址不是資料夾。
 RewriteCond %{REQUEST_FILENAME} !-d
+# 將請求網址轉到 index.php 這支檔案底下，至此結束
 RewriteRule ^(.*)$ index.php/$1 [L]
